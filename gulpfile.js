@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var bower = require('bower');
 var concat = require('gulp-concat');
-var sass = require('gulp-sass');
+// var sass = require('gulp-sass');
 var less = require('gulp-less');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
@@ -28,9 +28,10 @@ gulp.task('sass', function(done) {
         .on('end', done);
 });
 
-gulp.tacsk('less', function() {
-    return gulp.src(paths.less)
+gulp.task('less', function() {
+    return gulp.src('./www/styles/config.less')
         .pipe(less())
+        .pipe(rename('styles.css'))
         .pipe(gulp.dest('./www/styles/'));
 });
 
