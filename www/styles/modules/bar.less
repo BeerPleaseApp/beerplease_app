@@ -1,3 +1,17 @@
-.bar-header {
-	background: @color-secondary;
+/**
+ * @desc         Module bandeau header
+ * @name         bar.less
+ * @author       KB
+ * @tested       Firefox
+ * @requires     config.less
+ */
+
+.bar {
+    &.bar-header {
+        background: @color-secondary;
+        
+        .title {
+            color: #fff;
+        }
+    }
 }

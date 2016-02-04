@@ -6,7 +6,8 @@ var concat = require('gulp-concat');
 var less = require('gulp-less');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
-var sh = require('shelljs');
+// var sh = require('shelljs');
+var chmod = require('gulp-chmod');
 
 var paths = {
     sass: ['./scss/**/*.scss'],
@@ -32,6 +33,7 @@ gulp.task('less', function() {
     return gulp.src('./www/styles/config.less')
         .pipe(less())
         .pipe(rename('styles.css'))
+        .pipe(chmod(755))
         .pipe(gulp.dest('./www/styles/'));
 });
 

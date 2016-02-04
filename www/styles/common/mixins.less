@@ -1,28 +1,24 @@
 /**
- * @desc         Configuration LESS & import de fichiers
- * @name         config.less
- * @author       KB, MM
- */
-/* ==========================================================================
-   VARIABLES
-   ========================================================================== */
-/* ==========================================================================
-   FONTS
-   ========================================================================== */
-/* ==========================================================================
-   FILES
-   ========================================================================== */
-/**
  * Styleguide Mixins
  * @desc      Fonctions LESS
  * @name      mixins.less
  * @author    KB, MM
  */
+
 /*
 Cacher le texte de son conteneur
 
 Styleguide Mixins - 10. Cacher le texte
 */
+.ir() {
+    display: block;
+    font: ~"0/0" a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
 /*
 Créer une transition entre deux états d'un élément
 
@@ -30,6 +26,11 @@ Créer une transition entre deux états d'un élément
 
 Styleguide Mixins - 20. Transition entre deux états d'un élément
 */
+.transition(@arguments) {
+    -webkit-transition: @arguments;
+    transition: @arguments;
+}
+
 /*
 Gérer la transparence/opacité d'un élément
 
@@ -37,6 +38,12 @@ Gérer la transparence/opacité d'un élément
 
 Styleguide Mixins - 30. Transparence/opacité d'un élément
 */
+.opacity(@opacity) {
+    opacity: @opacity;
+    @opacityPercentage: @opacity * 100;
+    filter: ~"alpha(opacity=@{opacityPercentage})";
+}
+
 /*
 Gérer la rotation d'un élément
 
@@ -44,6 +51,12 @@ Gérer la rotation d'un élément
 
 Styleguide Mixins - 40. Rotation d'un élément
 */
+.rotate(@deg) {
+    -webkit-transform: rotate(@deg);
+    -moz-transform: rotate(@deg);
+    transform: rotate(@deg);
+}
+
 /*
 Gérer l'échelle (modification proportionnée de la taille) d'un élément
 
@@ -51,6 +64,12 @@ Gérer l'échelle (modification proportionnée de la taille) d'un élément
 
 Styleguide Mixins - 50. Echelle / taille proportionnée d'un élément
 */
+.scale(@ratio) {
+    -webkit-transform: scale(@ratio);
+    -ms-transform: scale(@ratio);
+    transform: scale(@ratio);
+}
+
 /*
 Gérer le déplacement en 3d
 
@@ -60,6 +79,12 @@ Gérer le déplacement en 3d
 
 Styleguide Mixins - 60. Position et déplacement sur 3 axes d'un élément
 */
+.translate3d(@x, @y: 0, @z: 0) {
+    -webkit-transform: translate3d(@x, @y, @z);
+    -ms-transform: translate3d(@x, @y, @z);
+    transform: translate3d(@x, @y, @z);
+}
+
 /*
 Gérer le déplacement en 2d
 
@@ -68,6 +93,12 @@ Gérer le déplacement en 2d
 
 Styleguide Mixins - 61. Position et déplacement sur 3 axes d'un élément
 */
+.translate(@x, @y: 0) {
+    -webkit-transform: translate(@x, @y);
+    -ms-transform: translate(@x, @y);
+    transform: translate(@x, @y);
+}
+
 /*
 Gérer la position et le déplacement sur l'axe X d'un élément
 
@@ -75,6 +106,12 @@ Gérer la position et le déplacement sur l'axe X d'un élément
 
 Styleguide Mixins - 65. Position et déplacement sur l'axe X
 */
+.translateX(@x) {
+    -webkit-transform: translateX(@x);
+    -ms-transform: translateX(@x);
+    transform: translateX(@x);
+}
+
 /*
 Gérer la position et le déplacement sur l'axe Y d'un élément
 
@@ -82,6 +119,12 @@ Gérer la position et le déplacement sur l'axe Y d'un élément
 
 Styleguide Mixins - 66. Position et déplacement sur l'axe Y
 */
+.translateY(@y) {
+    -webkit-transform: translateY(@y);
+    -ms-transform: translateY(@y);
+    transform: translateY(@y);
+}
+
 /*
 Dégradé vertical
 
@@ -92,6 +135,12 @@ Dégradé vertical
 
 Styleguide Mixins - 70. Dégradé vertical
 */
+.gradient-vertical(@start-color: #555, @end-color: #333, @start-percent: 0%, @end-percent: 100%) {
+    background: @end-color;
+    background: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);
+    background: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent);
+}
+
 /*
 Dégradé horizontal
 
@@ -102,6 +151,12 @@ Dégradé horizontal
 
 Styleguide Mixins - 80. Dégradé horizontal
 */
+.gradient-horizontal(@start-color: #555, @end-color: #333, @start-percent: 0%, @end-percent: 100%) {
+    background: @end-color;
+    background: -webkit-linear-gradient(left, @start-color @start-percent, @end-color @end-percent);
+    background: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent);
+}
+
 /*
 Dégradé radial
 
@@ -110,6 +165,12 @@ Dégradé radial
 
 Styleguide Mixins - 90. Dégradé radial
 */
+.gradient-radial(@start-color, @end-color) {
+    background: @end-color;
+    background: -webkit-radial-gradient(center, ellipse cover, @start-color 0%, @end-color 100%);
+    background: radial-gradient(ellipse at center, @start-color 0%, @end-color 100%);
+}
+
 /*
 Modèle de boîte CSS utilisé pour calculer la largeur et la hauteur des éléments
 
@@ -117,6 +178,12 @@ Modèle de boîte CSS utilisé pour calculer la largeur et la hauteur des élém
 
 Styleguide Mixins - 100. Modèle de boîte (boxSizing)
 */
+.box-sizing(@type: border-box) {
+    -webkit-box-sizing: @type;
+    -moz-box-sizing: @type;
+    box-sizing: @type;
+}
+
 /*
 Filter
 
@@ -125,6 +192,14 @@ Filter
 
 Styleguide Mixins - 110. Filter
  */
+.filter(@type, @value: 100%) {
+    -webkit-filter: ~"@{type}(@{value})";
+    -moz-filter: ~"@{type}(@{value})";
+    -ms-filter: ~"@{type}(@{value})";
+    filter: ~"@{type}(@{value})";
+}
+
+
 /*
 Font
 
@@ -133,6 +208,13 @@ Font
 
 Styleguide Mixins - 120. Font
  */
+.font(@name, @weight: @base-font-weight) {
+    font-family: "@{font-@{name}-@{weight}}", @fontFallback;
+}
+.font(@name, @weight: @base-font-weight) when (@weight = bold) {
+    font-weight: normal;
+}
+
 /*
 Font size
 
@@ -141,6 +223,10 @@ Font size
 
 Styleguide Mixins - 125. Pixel to em
  */
+.font-size(@size) {
+    font-size: @size * 1em / @base-fontsize;
+}
+
 /*
 Transform
 
@@ -148,6 +234,13 @@ Transform
 
 Styleguide Mixins - 130. Transform
  */
+.transform(@arguments) {
+    -webkit-transform: @arguments;
+    -ms-transform: @arguments;
+    transform: @arguments;
+}
+
+
 /*
 Transform-origin
 
@@ -155,6 +248,14 @@ Transform-origin
 
 Styleguide Mixins - 131. Transform-origin
  */
+.transform-origin(@arguments) {
+    -webkit-transform-origin: @arguments;
+    -ms-transform-origin: @arguments;
+    transform-origin: @arguments;
+}
+
+
+
 /*
 column-wrapper
 
@@ -163,6 +264,17 @@ column-wrapper
 
 Styleguide Mixins - 140. Mixins de grille
  */
+.col-wrapper(@gutter: @grid-gutter, @breakpoint: @smartphone-max) {
+    clear: both;
+    margin-left:  (@gutter / -2);
+    margin-right: (@gutter / -2);
+
+    @media (max-width: @breakpoint) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 /*
 column-item
 
@@ -170,6 +282,12 @@ column-item
 
 Styleguide Mixins - 141. Mixins de grille
  */
+.col-item(@float: left) {
+    float: @float;
+    min-height: 1px;
+    .box-sizing();
+}
+
 /*
 column-screen pour tous les écrans
 
@@ -180,56 +298,26 @@ column-screen pour tous les écrans
 
 Styleguide Mixins - 142. Mixins de grille
  */
+.col(@columns, @gutter-left: @grid-gutter, @gutter-right: @grid-gutter, @margin-bottom: @grid-gutter) {
+    padding-left: (@gutter-left / 2);
+    padding-right: (@gutter-right / 2);
+    margin-bottom: (@margin-bottom);
+    width: percentage((@columns / @grid-columns));
+
+    @clear-item : floor(12 / @columns);
+    &:nth-of-type(@{clear-item}n + 1) {
+        clear: left;
+    }
+}
+
 /*
 RGBA
  */
-/**
- * @desc         Styles des états généraux
- * @name         states.less
- * @author       KB, FT
- * @tested       Firefox
- * @requires     config.less
- */
-.is-visuallyHidden {
-  position: absolute !important;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
+.bg-alpha(@color, @opacity: .5) {
+   background-color: @color;
+   background-color: rgba(red(@color), green(@color), blue(@color), @opacity);
 }
-.l-overlay {
-  cursor: pointer;
-}
-.clear {
-  clear: both;
-}
-/**
- * @desc         Styles généraux d'agencement des modules CSS
- * @name         layout.less
- * @author       KB, MM
- * @tested       Firefox
- * @requires     config.less
- */
-/**
- * @desc         Module icons
- * @name         icon.less
- * @author       KB
- * @tested       Firefox
- * @requires     config.less
- */
-.ion-navicon:before {
-  color: #f9ae14;
-}
-/**
- * @desc         Module bandeau header
- * @name         bar.less
- * @author       KB
- * @tested       Firefox
- * @requires     config.less
- */
-.bar.bar-header {
-  background: #1b1b1b;
-}
-.bar.bar-header .title {
-  color: #fff;
+.color-alpha(@color, @opacity: .5) {
+   color: @color;
+   color: rgba(red(@color), green(@color), blue(@color), @opacity);
 }
