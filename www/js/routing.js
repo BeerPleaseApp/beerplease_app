@@ -1,6 +1,7 @@
 app.config(function($stateProvider, $urlRouterProvider) {
-    $stateProvider
+    ionic.Platform.setPlatform('ios');
 
+    $stateProvider
     .state('app', {
         url: '/app',
         abstract: true,
