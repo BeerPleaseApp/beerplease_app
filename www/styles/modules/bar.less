@@ -10,8 +10,12 @@
     &.bar-header {
         background: @color-secondary;
         
-        .title {
+        .title,
+        .button-clear {
             color: #fff;
+        }
+        .button-clear .icon::before {
+            color: @color-primary;
         }
     }
 }

@@ -230,6 +230,10 @@ RGBA
 .bar.bar-header {
   background: #1b1b1b;
 }
-.bar.bar-header .title {
+.bar.bar-header .title,
+.bar.bar-header .button-clear {
   color: #fff;
+}
+.bar.bar-header .button-clear .icon::before {
+  color: #f9ae14;
 }
