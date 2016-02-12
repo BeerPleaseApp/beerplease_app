@@ -1,0 +1,11 @@
+<ion-view view-title="Top">
+    <ion-content>
+        <h1>Top</h1>
+
+        <ion-list>
+            <ion-item ng-repeat="item in list" href="#/app/single/{{item.id}}">
+                {{item.title}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

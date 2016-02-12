@@ -4,7 +4,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('app', {
         url: '/app',
         abstract: true,
-        templateUrl: 'templates/menu.html',
+        templateUrl: 'templates/layout.html',
         controller: 'App'
     })
 
@@ -36,12 +36,63 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
     })
 
+
     .state('app.single', {
         url: '/single/:playlistId',
         views: {
             'menuContent': {
                 templateUrl: 'templates/single.html',
                 controller: 'Single'
+            }
+        }
+    })
+
+    .state('app.top', {
+        url: '/top',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/top.html',
+                controller: 'Top'
+            }
+        }
+    })
+
+    .state('app.random', {
+        url: '/random',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/random.html',
+                controller: 'Random'
+            }
+        }
+    })
+
+    .state('app.profil', {
+        url: '/profil',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/profil.html',
+                controller: 'Profil'
+            }
+        }
+    })
+
+    .state('app.friends', {
+        url: '/friends',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/friends.html',
+                controller: 'Friends'
+            }
+        }
+    })
+
+    .state('app.add', {
+        url: '/add',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/add.html',
+                controller: 'Add'
             }
         }
     });

@@ -48,6 +48,29 @@ angular.module('starter.controllers', [])
     ];
 })
 
+.controller('Top', function($scope) {
+    $scope.list = [
+        { title: 'Bière top #1', id: 1 },
+        // item #2, etc
+    ];
+})
+
+.controller('Random', function($scope, $stateParams) {
+
+})
+
+.controller('Profil', function($scope, $stateParams) {
+
+})
+
+.controller('Friends', function($scope, $stateParams) {
+
+})
+
+.controller('Add', function($scope, $stateParams) {
+
+})
+
 .controller('Single', function($scope, $stateParams) {
 
 });

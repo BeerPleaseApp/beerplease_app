@@ -6,15 +6,14 @@ var concat = require('gulp-concat');
 var less = require('gulp-less');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
-// var sh = require('shelljs');
 var chmod = require('gulp-chmod');
 
 var paths = {
     sass: ['./scss/**/*.scss'],
-    less: ['./www/styles/*.less']
+    less: ['./www/styles/**/*.less']
 };
 
-gulp.task('default', ['less']);
+gulp.task('default', ['watch']);
 
 gulp.task('sass', function(done) {
     gulp.src('./scss/ionic.app.scss')

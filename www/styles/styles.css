@@ -227,13 +227,27 @@ RGBA
  * @tested       Firefox
  * @requires     config.less
  */
-.bar.bar-header {
+.bar {
   background: #1b1b1b;
 }
-.bar.bar-header .title,
-.bar.bar-header .button-clear {
+.bar .title,
+.bar .button-clear {
   color: #fff;
 }
-.bar.bar-header .button-clear .icon::before {
+.bar .button-clear .icon::before {
   color: #f9ae14;
+}
+/**
+ * @desc         Module onglets
+ * @name         tabs.less
+ * @author       KB
+ * @tested       Firefox
+ * @requires     config.less
+ */
+.tabs {
+  background-color: #1b1b1b;
+  background-color: rgba(27, 27, 27, 0.7);
+}
+.tab-item {
+  color: #fff;
 }
