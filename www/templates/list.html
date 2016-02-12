@@ -4,7 +4,9 @@
 
         <ion-list>
             <ion-item ng-repeat="item in list" href="#/app/single/{{item.id}}">
-                {{item.title}}
+                <h2>{{ item.brewer }} {{ item.name }}</h2>
+                <p>{{ item.country }}</p>
+                <p>Catégorie : {{ item.color }} | Alcool : {{ item.alcohol }}</p>
             </ion-item>
         </ion-list>
     </ion-content>

@@ -18,7 +18,7 @@ angular.module('starter.controllers', [])
     }).then(function(modal) {
         $scope.modal = modal;
     });
-
+    
     // Triggered in the login modal to close it
     $scope.closeLogin = function() {
         $scope.modal.hide();
@@ -28,7 +28,7 @@ angular.module('starter.controllers', [])
     $scope.login = function() {
         $scope.modal.show();
     };
-
+    
     // Perform the login action when the user submits the login form
     $scope.doLogin = function() {
         console.log('Doing login', $scope.loginData);
@@ -41,11 +41,14 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('List', function($scope) {
-    $scope.list = [
-        { title: 'Bière #1', id: 1 },
-        // item #2, etc
-    ];
+.controller('List', function($scope, $http, $ionicLoading) {
+    $ionicLoading.show({
+        template: 'Chargement...'
+    });
+    $http.get('beers.json').success(function(response) {
+        $scope.list = response;
+        $ionicLoading.hide();
+    });
 })
 
 .controller('Top', function($scope) {
