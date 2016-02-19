@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('App', function($scope, $ionicModal, $timeout) {
+.controller('App', function($scope, $ionicModal, $timeout, $state) {
 
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
@@ -39,6 +39,11 @@ angular.module('starter.controllers', [])
             $scope.closeLogin();
         }, 1000);
     };
+
+
+    $scope.search = function() {
+        $state.go('app.search');
+    };
 })
 
 .controller('List', function($scope, $http, $ionicLoading) {
@@ -75,5 +80,5 @@ angular.module('starter.controllers', [])
 })
 
 .controller('Single', function($scope, $stateParams) {
-
+    
 });
