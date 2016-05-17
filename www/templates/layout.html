@@ -1,8 +1,9 @@
-<ion-side-menus enable-menu-with-back-views="true">
-    <ion-side-menu-content>
-        <ion-nav-bar class="bar-default">
-            <ion-nav-back-button></ion-nav-back-button>
+<ion-side-menus enable-menu-with-back-views="false">
+    <ng-include src="'templates/partials/menu.html'"></ng-include>
 
+    <ion-side-menu-content drag-content="false">
+        <!-- Header -->
+        <ion-nav-bar class="bar-default">
             <ion-nav-buttons side="left">
                 <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
             </ion-nav-buttons>
@@ -10,11 +11,10 @@
                 <button class="button button-icon button-clear ion-ios-search-strong" ng-click="search();"></button>
             </ion-nav-buttons>
         </ion-nav-bar>
+        <!-- #Header -->
 
         <ion-nav-view name="menuContent"></ion-nav-view>
-
+        
         <ng-include src="'templates/partials/footer.html'"></ng-include>
     </ion-side-menu-content>
-
-    <ng-include src="'templates/partials/menu.html'"></ng-include>
 </ion-side-menus>

@@ -1,0 +1,38 @@
+/**
+ * @desc         Module menu
+ * @name         menu.less
+ * @author       KB
+ * @tested       Firefox
+ * @requires     config.less
+ */
+
+// Menu
+.menu-animated {
+    transform: translateX(0) !important;
+}
+.menu-left {
+    transform: translate3d(-100%, 0, 0);
+    transition: .3s;
+
+    .menu-open & {
+        z-index: 100 !important;
+        transform: translate3d(0, 0, 100px);
+        box-shadow: 5px 0 5px rgba(0, 0, 0, .15);
+    }
+}
+
+// Contenu app
+.menu-content{
+    box-shadow: none;
+
+    .menu-open & {
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            background: rgba(0, 0, 0, .8);
+        }
+    }
+}

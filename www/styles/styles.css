@@ -237,6 +237,9 @@ RGBA
 .bar .button-clear .icon::before {
   color: #f9ae14;
 }
+.bar-header .button-icon {
+  display: block !important;
+}
 /**
  * @desc         Module onglets
  * @name         tabs.less
@@ -250,4 +253,34 @@ RGBA
 }
 .tab-item {
   color: #fff;
+}
+/**
+ * @desc         Module menu
+ * @name         menu.less
+ * @author       KB
+ * @tested       Firefox
+ * @requires     config.less
+ */
+.menu-animated {
+  transform: translateX(0) !important;
+}
+.menu-left {
+  transform: translate3d(-100%, 0, 0);
+  transition: .3s;
+}
+.menu-open .menu-left {
+  z-index: 100 !important;
+  transform: translate3d(0, 0, 100px);
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.15);
+}
+.menu-content {
+  box-shadow: none;
+}
+.menu-open .menu-content:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.8);
 }
