@@ -2,52 +2,69 @@ app.config(function($stateProvider, $urlRouterProvider) {
     ionic.Platform.setPlatform('ios');
 
     $stateProvider
-    .state('app', {
-        url: '/app',
-        abstract: true,
-        templateUrl: 'templates/layout.html',
-        controller: 'App'
-    })
-
-    .state('app.home', {
-        url: '/home',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/home.html'
+        .state('app.intro', {
+            url: '/intro',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/intro.html',
+                    controller: 'IntroController'
+                }
             }
-        }
-    })
-
-    .state('app.search', {
-        url: '/search',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/search.html'
+        })
+        .state('app.login', {
+            url: '/login',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/login.html',
+                    controller: 'LoginController'
+                }
             }
-        }
-    })
+        })
+        .state('app', {
+            url: '/app',
+            abstract: true,
+            templateUrl: 'templates/layout.html',
+            controller: 'App'
+        })
 
-    .state('app.list', {
-        url: '/list',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/list.html',
-                controller: 'List'
+        .state('app.home', {
+            url: '/home',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/home.html'
+                }
             }
-        }
-    })
+        })
 
-
-    .state('app.single', {
-        url: '/single/:playlistId',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/single.html',
-                controller: 'Single'
+        .state('app.search', {
+            url: '/search',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/search.html'
+                }
             }
-        }
-    })
+        })
 
+        .state('app.list', {
+            url: '/list',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/list.html',
+                    controller: 'List'
+                }
+            }
+        })
+
+
+        .state('app.single', {
+            url: '/single/:playlistId',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/single.html',
+                    controller: 'Single'
+                }
+            }
+        })
     .state('app.top', {
         url: '/top',
         views: {
@@ -99,5 +116,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
     });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/home');
+    $urlRouterProvider.otherwise('/app/intro');
 });

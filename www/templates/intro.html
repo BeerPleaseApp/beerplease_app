@@ -1,0 +1,23 @@
+<ion-view id="intro" view-title="">
+    <ion-content scroll="false" padding="true">
+        <ion-slide-box show-pager="true" disable-scroll="false" on-slide-changed="changeSlide($index)">
+			<ion-slide>
+				<h3>Découvrez</h3>
+				<p>Recherchez parmi plus de 1000 bières et découvrez nos suggestions</p>
+			</ion-slide>
+			<ion-slide>
+				<h3>Notez</h3>
+				<p>Faites une sélection de vos bières, mettez les en favoris et donner votre avis</p>
+			</ion-slide>
+			<ion-slide>
+				<h3>Partagez</h3>
+				<p>Suivez le flux d’actualité de la communauté et celui de vos d’amis en partageant vos coups de coeur</p>
+			</ion-slide>
+        </ion-slide-box>
+    </ion-content>
+    <div class="actions">
+    	<button class="button button-positive button-clear no-animation" ng-click="checkUser()" ng-show="slideIndex != 2">Non, merci</button>
+    	<button class="button button-positive button-clear no-animation" ng-click="nextSlide()" ng-show="slideIndex != 2">Suivant</button>
+    	<button class="button button-positive button-clear no-animation" ng-click="checkUser()" ng-show="slideIndex == 2">Go beer !</button>
+    </div>
+</ion-view>
