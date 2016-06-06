@@ -1,14 +1,42 @@
-/**
- * @desc         Module icons
- * @name         icon.less
- * @author       KB
- * @tested       Firefox
- * @requires     config.less
- */
-
 // Surcharge icons ionic
 .ion-navicon {
 	&:before {
 		color: @color-primary;
 	}
+}
+
+/* ==========================================================================
+   FONT
+   ========================================================================== */
+@font-face {
+  font-family: BeerPlease;
+  src: url("../fonts/beerplease.eot?v=1");
+  src: url("../fonts/beerplease.eot?v=1#iefix") format("embedded-opentype"),
+       url("../fonts/beerplease.woff?v=1") format("woff"),
+       url("../fonts/beerplease.ttf?v=1") format("truetype"),
+       url("../fonts/beerplease.svg?v=1#BeerPlease") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*="icon-"]:before {
+    font-family: BeerPlease;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   ICONS
+   ========================================================================== */
+.icon--logo-black:before {
+    content: "\61";
+}
+.icon--arrow:before {
+    content: "\62";
 }

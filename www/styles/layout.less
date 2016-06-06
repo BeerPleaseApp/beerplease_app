@@ -5,3 +5,47 @@
  * @tested       Firefox
  * @requires     config.less
  */
+
+
+/* ==========================================================================
+   INTRO
+   ========================================================================== */
+.intro {
+    .icon--logo-black {
+        display: block;
+        margin-top: 15px;
+        text-align: center;
+        
+        &:before {
+            font-size: 45px;
+        }
+    }
+    
+    .actions {
+        position: absolute;
+        top: 15vh;
+        right: 5vw;
+        z-index: 5;
+        height: 82vh
+    }
+    .action-top,
+    .action-bottom {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 0;
+    }
+    .action-bottom {
+        top: auto;
+        bottom: 10px;
+    }
+    .btn {
+        white-space: nowrap;
+        transition: .3s;
+
+        .icon:before {
+            color: @color-secondary;
+            font-size: 20px;
+        }
+    }
+}

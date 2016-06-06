@@ -10,12 +10,12 @@
 // Couleurs
 @color-primary: #f9ae14;
 @color-secondary: #1b1b1b;
-// @color-muted: #eef;
+@color-muted: #ccc;
 // @color-highlight: #ff9600;
 // @color-note: #666;
 // @color-text: #242424;
-// @color-bg: #fefefe;
-// @color-border: #ccc;
+@color-bg: #f7b000;
+@color-border: #ccc;
 // @color-link-default: #242424;
 // @color-link-visited: #444;
 // @color-link-hover: #333;
@@ -34,7 +34,7 @@
 @base-fontsize: 14;
 @base-fontsize-computed: @base-fontsize / 16em;
 @base-lineheight: 1.4;
-@v-align: 30px;
+@v-align: 20px;
 
 // Titres
 // @color-h1: @color-primary;
@@ -52,14 +52,17 @@
 
 // Grille
 @grid-columns: 12;
-@grid-gutter: 30px;
+@grid-gutter: 20px;
+
+// Modules
+@border-radius: 20px;
 
 /* ==========================================================================
    FONTS
    ========================================================================== */
 @fontFallback: Arial, Verdana, sans-serif;
-// @font-primary-normal: CustomFont;
-// @font-primary-bold: CustomFont;
+@font-primary-normal: MontserratRegular;
+@font-primary-bold: MontserratBold;
 // @font-secondary-normal: CustomFont;
 // @font-secondary-bold: CustomFont;
 
@@ -67,11 +70,14 @@
    FILES
    ========================================================================== */
 @import url("common/mixins");
-// @import url("common/normalize");
+@import url("common/normalize");
 @import url("base");
 @import url("states");
 @import url("layout");
+@import url("modules/btn");
 @import url("modules/icon");
+@import url("modules/title");
+@import url("modules/slider");
 @import url("modules/bar");
 @import url("modules/tabs");
 @import url("modules/menu");
